@@ -1,0 +1,35 @@
+{
+  "name": "t3ch-c0nn3t",
+  "version": "1.0.0",
+  "description": "This platform was created to connect users by allowing them to create blogs, comment on each other and much more...",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.6",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "nodemon": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemaldemirgil/t3ch-c0nn3t.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kemaldemirgil/t3ch-c0nn3t/issues"
+  },
+  "homepage": "https://github.com/kemaldemirgil/t3ch-c0nn3t#readme"
+}
