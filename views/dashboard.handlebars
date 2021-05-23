@@ -1,0 +1,19 @@
+    <header>
+        <a href="#"><h1>Tech-Connect</h1></a>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><button id="logout" class="btn-no-style">Logout</button></li>
+        </ul>
+    </header>
+    
+    <div class="home-title">
+        <h3>My Posts</h3>
+    </div>
+    <div class="post-container">
+        {{#each myPost}}
+        {{/each}}
+    </div>
+    <script src="/js/logout.js"></script>
+</body>
+</html>

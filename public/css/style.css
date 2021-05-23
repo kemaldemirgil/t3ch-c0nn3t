@@ -29,9 +29,6 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: inherit;
-}
 
 
 main {
@@ -40,6 +37,9 @@ main {
   flex-grow: 1;
 }
 
+.post-container {
+  display:block
+}
 
 
 .hp-logo {
@@ -162,16 +162,18 @@ nav a:hover {
 }
 
 .home-title {
-  text-align: left;
-  padding: 10px;
-  background-color: #84e2ce;
-  margin-top: 10px;
-  display: block;
+  text-align: center;
+  padding: 40px;
+  background-color:#d8d8d8;
+}
+
+.home-title h3 {
+  font-size: 62px;
 }
 
 header {
   padding: 15px 20px 10px 20px;
-  background: var(--primary);
+  background-color: #e3e4e3;
   color: var(--light);
   box-shadow: 2px 2px 4px #929292;
   z-index: 1;
@@ -180,6 +182,7 @@ header {
 header h1 {
   float: left;
   font-family: var(--logo);
+  color: #000000;
 }
 header ul {
   display:flex;
@@ -198,12 +201,19 @@ header ul li {
   z-index: 1;
 }
 
-.head .title {
+.card-head {
+  padding: 15px 20px 10px 20px;
+  background-color: #76a6b1;
+  color:#182c23;
+  z-index: 1;
+}
+
+.card-head .title {
   display: inline;
   font-size: 22px;
 }
 
-.head .author {
+.card-head .author {
   float: right;
 }
 
@@ -212,10 +222,11 @@ header ul li {
   margin: 20px;
 }
 
+
 .card {
-  margin: 40px;
+  margin: 20px;
   flex: 0 1 300px;
-  border: 7px double var(--dark);
+  border: 3px solid var(--dark);
   border-radius: 10px;
   background-color: var(--light);
   color: var(--dark);
@@ -225,6 +236,72 @@ header ul li {
   font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
+}
+
+.a-social-icons {
+  position: fixed;
+  top: 85%;
+  right: 40%;
+  transform: translateX(-50%);
+}
+.a-social-icons button{
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 50px;
+  background-color: #f6f5f5;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+.a-social-icons button:hover {
+  background-color: #303030;
+  color: #f6f5f5;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.5s;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content-input {
+  resize:vertical
 }
 
 @keyframes connect {

@@ -1,24 +1,49 @@
-<header>
-    <h1>Tech-Connect</h1>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><button id="logout" class="btn-no-style">Logout</button></li>
-    </ul>
-</header>
-<main>
+    <header>
+        <a href="#"><h1>Tech-Connect</h1></a>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><button id="logout" class="btn-no-style">Logout</button></li>
+        </ul>
+    </header>
+    
     <div class="home-title">
         <h3>Live Posts</h3>
     </div>
-    <div class="posts">
-        <section class="card">
-            <div class="head">
-                <span class="title">Post Title</span>
-                <span class="author">Posted by KD on 5/8/2020</span>
-            </div>
-            <div class="card-body">
-                <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, repellat facilis! Autem veritatis nam ex alias, at reprehenderit quisquam sunt?</p>
-            </div>
-        </section>
+    <div class="post-container">
+        {{#each posts as |post|}}
+        {{> post-details}}
+        {{/each}}   
     </div>
-</main>
+    <div class="a-social-icons">
+        <button id="myBtn">New Post</button>
+    </div>
+    <!-- modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+            <h1 class="page-title text-dark">Create a post</h1>
+            <form class="form create-post">
+              <div class="form-group">
+                <label for="title" class="text-dark">Title</label>
+                <input class="form-input" type="text" id="post-title" />
+              </div>
+              <div class="form-group">
+                <label for="post-content" class="text-dark">Content</label>
+                <textarea id="post-content" class="form-input content-input" rows="3" cols="25" placeholder="Write about something!"></textarea>
+                <!-- <input class="form-input content-input" type="text" id="content" /> -->
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Post</button>
+              </div>
+            </form>
+        </div>
+      
+    </div>
+
+    <script src="/js/home.js"></script>
+    <script src="/js/logout.js"></script>
+</body>
+</html>

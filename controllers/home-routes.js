@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { User, Post } = require('../models');
 
 
 // Home route
@@ -19,16 +20,25 @@ router.get('/', async (req, res) => {
 
 
 router.get('/home', async (req, res) => {
-    try {
-      const lg = "loggeed in homepage"
-      res.render('home', {
-        lg,
-        loggedIn: req.session.loggedIn
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+  const postData = await Post.findAll().catch((err) => { 
+      res.json(err);
+  });
+  const posts = postData.map((post) => post.get({ plain: true }));
+  res.render('home', { posts });
+});
+
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    const lg = "loggeed in dashboard"
+    res.render('dashboard', {
+      lg,
+      loggedIn: req.session.loggedIn
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // Login route
