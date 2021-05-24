@@ -7,7 +7,7 @@
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
-  --logo: 'Fascinate Inline', cursive;
+  --logo: 'Monoton', cursive;
 }
 
 * {
@@ -56,8 +56,8 @@ main {
 .logo {
   font-family: var(--logo);
   font-size: 82px;
-  color: #8a49ca;
-  text-shadow: 2px 2px 20px rgb(0, 0, 0);
+  color: #0026ff;
+  text-shadow: 6px 6px 6px rgb(0, 0, 0);
   -webkit-text-stroke: 0.5px black;
   
 }
@@ -65,10 +65,10 @@ main {
 .hp-logo li {
   font-size: 28px;
   list-style-type:none;
-  color: #ffffff;
+  color: #1f41ff;
   font-weight: bolder;
-  -webkit-text-stroke: 1px #8a49ca;
-  text-shadow: 1px 1px 1px black;
+  -webkit-text-stroke: 1px #000000;
+  text-shadow: 1px 1px 4px #3f3f3f;
   line-height: 50px;
 }
 
@@ -129,7 +129,8 @@ nav a:hover {
 }
 
 .logIn {
-  color:#000000
+  color:#000000;
+  position: absolute;
 }
 
 .hp-display {
@@ -139,6 +140,7 @@ nav a:hover {
   margin-right: auto;
   width: 100%;
   background-size:cover;
+  height: auto
 }
 
 .log-in-display {
@@ -312,4 +314,60 @@ header ul li {
   70% {background-image: url(./images/5.jpg);}
   85% {background-image: url(./images/6.jpg);}
   100% {background-image: url(./images/7.jpg);}
+}
+
+
+
+@media only screen and (max-width: 1075px) {
+  body {
+    background-image: linear-gradient(#ffffff, #bebeff);
+  }
+  .logo {
+    font-size: 62px;
+  }
+  .hp-logo {
+    position: relative;
+    top: -30%;
+    white-space:normal
+  }
+  .hp-logo li {
+    display: none;
+  }
+  .login-card1 {
+    position: absolute;
+    top: 35%;
+    left: 28%;
+    height: 520px;
+  }
+  .login-card2 {
+    position: absolute;
+    top: 35%;
+    left: 28%;
+    height: 380px;
+  }
+  /* .hp-display {
+    animation: none;
+  } */
+}
+
+
+@media only screen and (max-width: 650px) {
+  .login-card1 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    height: 540px;
+  }
+  .login-card2 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    height: 380px;
+  }
+  .hp-logo {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    white-space:normal
+  }
 }
