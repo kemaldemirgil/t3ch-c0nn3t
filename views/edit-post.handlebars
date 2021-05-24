@@ -1,0 +1,43 @@
+    <header>
+        <h1>Tech-Connect</h1>
+        <ul>
+            {{!-- <li><a href="/home">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li> --}}
+            <li><button id="home" class="btn-no-style">Home</button></li>
+            <li><button id="dashboard" class="btn-no-style">Dashboard</button></li>
+            <li><button id="logout" class="btn-no-style">Logout</button></li>
+        </ul>
+    </header>
+    <h3>Edit post</h3>
+    <div class="post-container">
+        <div class="modal-content">
+            <h1 class="page-title text-dark">Edit a post</h1>
+            <form class="form edit-post">
+              <div class="form-group">
+                <label for="title" class="text-dark">Title</label>
+                <input class="form-input" type="text" id="post-title" placeholder="{{post.title}}" />
+              </div>
+              <div class="form-group">
+                <label for="post-content" class="text-dark">Content</label>
+                <textarea id="post-content" class="form-input content-input" rows="3" cols="25" placeholder="Write about something!">{{post.content}}</textarea>
+              </div>
+              <div>
+                  <p>created by you on {{format_date post.created_at}}</p>
+                  <a href="api/users/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-block edit-post-form" type="submit">Post</button>
+                <button class="btn btn-primary btn-block delete-post-button" type="submit">Delete post</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script src="/js/edit-post.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/delete-post.js"></script>
+    <script src="/js/comment.js"></script>
+</body>
+</html>

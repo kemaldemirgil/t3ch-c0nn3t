@@ -1,11 +1,12 @@
 <div class="posts">
     <section class="card">
         <div class="card-head">
-            <span class="title">{{title}}</span>
-            <span class="author">Posted by KD on 5/8/2020</span>
+            <a href="/api/users/post/{{id}}" class="title">{{title}}</a>
+            <span class="author">{{user.username}} on {{format_date created_at}}</span>
         </div>
         <div class="card-body">
             <p class="content">{{content}}</p>
         </div>
+        {{format_date created_at}} | <a href="/api/users/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </section>
 </div>

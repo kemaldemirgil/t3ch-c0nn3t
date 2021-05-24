@@ -12,7 +12,7 @@ const loginHandler = async (event) => {
         });
         
         if (response.ok) {
-            document.location.replace('/home');
+            document.location.replace('/api/users/home');
           } else {
             alert('Failed to log in.');
           }
