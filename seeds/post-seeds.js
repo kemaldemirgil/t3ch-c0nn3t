@@ -8,7 +8,7 @@ const postData = [
     },
     {
         title: "Skewed News hits all time records!",
-        content: "Servering the top news without choosing sides; Skewed News has gotten extremely popular lately. With it's new features such as the 'Currency Calculator', 'Weather Dashboard' and 'Jokes Panel', even young users started using this great news website.",
+        content: "Serving the top news without choosing sides; Skewed News has gotten extremely popular lately. With it's new features such as the 'Currency Calculator', 'Weather Dashboard' and 'Jokes Panel', even young users started using this great news website.",
         user_id: 1
     },
     {
