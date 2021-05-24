@@ -2,45 +2,33 @@ const { User } = require('../models');
 
 const userData = [
     {
-        username: "martin_bour",
-        twitter: "martinb",
-        github: "martinb",
-        email: "martin_b@gmail.com",
+        username: "tyrell_wellick",
+        email: "tyrell@gmail.com",
         password: "p@ssword1"
     },
     {
-        username: "matt_b",
-        twitter: "mathewb",
-        github: "mathewb",
-        email: "mathew_b@gmail.com",
+        username: "mia_simay",
+        email: "mia@gmail.com",
         password: "p@ssword2"
     },
     {
-        username: "shaun_c",
-        twitter: "shaun",
-        github: "shaun",
-        email: "shaun_c@gmail.com",
+        username: "robert_paulson",
+        email: "robertp@gmail.com",
         password: "p@ssword3"
     },
     {
-        username: "lee_n",
-        twitter: "leenorris",
-        github: "leenorris",
-        email: "lee_n@gmail.com",
+        username: "gon_freecs",
+        email: "gon@gmail.com",
         password: "p@ssword4"
     },
     {
-        username: "priya_r",
-        twitter: "priyaravi23",
-        github: "priyaravi23",
-        email: "priya_r@gmail.com",
+        username: "uma_thurman",
+        email: "uma@gmail.com",
         password: "p@ssword5"
     },
     {
-        username: "pooja",
-        twitter: "pooja_w",
-        github: "pooja",
-        email: "pooja@gmail.com",
+        username: "tyler_durden",
+        email: "tyler@gmail.com",
         password: "p@ssword6"
     }
 ]
