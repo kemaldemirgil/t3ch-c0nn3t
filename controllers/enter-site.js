@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 // Home route
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
   // res.render('signup');
   try { 
       const sg = "signed in"
