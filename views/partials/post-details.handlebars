@@ -1,12 +1,13 @@
 <div class="posts">
     <section class="card">
         <div class="card-head">
-            <a href="/api/users/post/{{id}}" class="title">{{title}}</a>
-            <span class="author"><span>{{user.username}}</span> on {{format_date created_at}}</span>
+            <a href="/api/users/post/{{id}}" class="title"><i class="fa fa-envelope"></i> {{title}}</a>
+            <span class="author"><span><i class="fa fa-user"></i> {{user.username}}</span></span>
         </div>
         <div class="card-body">
-            <p class="content">{{content}}</p>
+            <p class="content"><i class="fa fa-terminal"></i> {{content}}</p>
         </div>
-        <a class="comment-amount" href="/api/users/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> <span class="post-date">posted on : {{format_date created_at}}</span>
+        <a class="comment-amount" href="/api/users/post/{{id}}"><i class="fa fa-comments"></i> {{comments.length}} {{format_plural "comment" comments.length}}</a> 
+        <span class="post-date"><i class="fa fa-calendar"></i> posted on : {{format_date created_at}}</span>
     </section>
 </div>

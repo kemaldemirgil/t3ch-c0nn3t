@@ -3,10 +3,6 @@
   --font-white: #cecece;
   --tertiary: #5e877f;
   --posts_bg: #cecece;
-  --light: #e3e4e3;
-  --dark: #182c23;
-  --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
   --logo: 'Monoton', cursive;
   --title: 'Major Mono Display', monospace;
   --general: 'Cairo', sans-serif;
@@ -28,7 +24,7 @@ body {
 }
 
 a {
-  color: var(--dark);
+  color: #182c23;
   text-decoration: none;
 }
 
@@ -118,23 +114,28 @@ main {
 .hp-logo li {
   font-size: 28px;
   list-style-type:none;
-  color: #1f41ff;
+  color: #000000;
   font-weight: bolder;
-  -webkit-text-stroke: 1px #000000;
-  text-shadow: 1px 1px 4px #3f3f3f;
+  text-shadow: 1px 1px 2px #303030;
   line-height: 50px;
+  font-family: var(--general);
 }
+
 
 .login-card1 {
   padding: 20px;
   height: 500px;
   background-color: #ffffff;
   margin: auto;
-  color: var(--light);
   box-shadow: 2px 2px 6px #000000;
   flex: 0 0 30%;
   border-radius: 5px;
 }
+
+/* .login-card1 * {
+  font-family: var(--general);
+  font
+} */
 
 .login-card2 {
   padding: 20px;
