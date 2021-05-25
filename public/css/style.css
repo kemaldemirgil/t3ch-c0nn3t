@@ -51,11 +51,13 @@ main {
   border-bottom: 1px solid #242424;
   border-top: 1px solid #242424;
 }
+
 .edit-post-container {
   display:block;
   background-color: #303030;
   padding: 2%;
 }
+
 .edit-post-container * {
   font-family: var(--general);
 }
@@ -90,7 +92,6 @@ main {
   border: 1px solid rgb(133, 133, 133);
 }
 
-
 .hp-logo {
     margin: auto auto;
     color: black;
@@ -108,7 +109,6 @@ main {
   color: #0026ff;
   text-shadow: 6px 6px 6px rgb(0, 0, 0);
   -webkit-text-stroke: 0.5px black;
-  
 }
 
 .hp-logo li {
@@ -121,7 +121,6 @@ main {
   font-family: var(--general);
 }
 
-
 .login-card1 {
   padding: 20px;
   height: 500px;
@@ -131,11 +130,6 @@ main {
   flex: 0 0 30%;
   border-radius: 5px;
 }
-
-/* .login-card1 * {
-  font-family: var(--general);
-  font
-} */
 
 .login-card2 {
   padding: 20px;
@@ -180,7 +174,6 @@ main {
 }
 
 .home-title {
-  /* text-align: center; */
   background-color:#1f1f1f;
   padding: 0 20px;
 }
@@ -200,6 +193,7 @@ main {
   float: right;
   font-size: 18px;
 }
+
 #text {
   font-size: 20px;
   color: #802121;
@@ -222,20 +216,25 @@ header h1 {
   font-family: var(--logo);
   color: #000000;
 }
+
 header ul {
   display:flex;
   float: right;
 }
+
 header ul li {
   padding: 10px;
   list-style-type: none;
 }
+
 header ul li button {
   font-family: var(--general);
 }
+
 header ul li button:hover {
   text-decoration: underline;
 }
+
 .posts {
   border-top: 1.5px dashed #000000;
 }
@@ -262,7 +261,6 @@ header ul li button:hover {
   font-size: 22px;
   font-family: var(--general);
   color: var(--font-white);
-
 }
 
 .card-head .author {
@@ -270,6 +268,7 @@ header ul li button:hover {
   font-family: var(--general);
   color: var(--font-white);
 }
+
 .card-head .author span {
   font-weight: 500;
 }
@@ -322,9 +321,11 @@ header ul li button:hover {
 .comment-form h3 {
   padding: 2%;
 }
+
 .comments *{
   font-family: var(--general);
 }
+
 .comment .text {
   padding-bottom: 10px;
   padding-left: 10px;
@@ -355,6 +356,7 @@ header ul li button:hover {
   margin: 1% 2%;
   border: 1px solid #1f1f1f;
 }
+
 .previous-comments h4, .comment-form h3 {
   font-family: var(--title);
 }
@@ -370,6 +372,7 @@ header ul li button:hover {
   transform: translateX(-50%);
   z-index: 1;
 }
+
 .a-social-icons button{
   display:inline-flex;
   justify-content: center;
@@ -381,8 +384,8 @@ header ul li button:hover {
   border-radius: 8px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
   font-family: var(--general);
-  
 }
+
 .a-social-icons button:hover {
   background-color: #303030;
   color: #f6f5f5;
@@ -391,20 +394,19 @@ header ul li button:hover {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000;
+  background-color: #00000066;
 }
 
-/* Modal Content */
 .modal-content {
   background-color: #444444;
   margin: auto;
@@ -412,6 +414,7 @@ header ul li button:hover {
   border: 1px solid rgb(0, 0, 0);
   width: 80%;
 }
+
 .modal-content * {
   font-family: var(--general);
 }
@@ -420,7 +423,6 @@ header ul li button:hover {
   background-color: #c2c2c2;
 }
 
-/* The Close Button */
 .close {
   color: #c2c2c2;
   float: right;
@@ -428,8 +430,7 @@ header ul li button:hover {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -453,7 +454,6 @@ footer * {
   color: #000000;
 }
 
-
 @keyframes connect {
   0%   {background: url(./images/1.jpg)no-repeat center center/cover;;}
   25%  {background: url(./images/2.jpg)no-repeat center center/cover;;}
@@ -464,37 +464,38 @@ footer * {
   100% {background: url(./images/7.jpg)no-repeat center center/cover;;}
 }
 
-
 @media only screen and (max-width: 1075px) {
   body {
     background-image: linear-gradient(#ffffff, #bebeff);
   }
+
   .logo {
     font-size: 62px;
   }
+
   .hp-logo {
     position: relative;
     top: -30%;
     white-space:normal
   }
+
   .hp-logo li {
     display: none;
   }
+
   .login-card1 {
     position: absolute;
     top: 35%;
     left: 28%;
     height: 520px;
   }
+
   .login-card2 {
     position: absolute;
     top: 35%;
     left: 28%;
     height: 380px;
   }
-  /* .hp-display {
-    animation: none;
-  } */
 }
 
 @media only screen and (max-width: 900px) {
@@ -502,9 +503,11 @@ footer * {
     top: 90%;
     right: -3%;
   }
+
   .a-social-icons button{
     width: 110%;
   }
+
   .card-head .author {
     float:none;
     display: block;
@@ -520,18 +523,21 @@ footer * {
     left: 10%;
     height: 540px;
   }
+
   .login-card2 {
     position: absolute;
     top: 30%;
     left: 10%;
     height: 380px;
   }
+
   .hp-logo {
     position: absolute;
     top: 5%;
     left: 4%;
     white-space:normal
   }
+
   header ul {
     display:flex;
     float: right;
@@ -556,27 +562,20 @@ footer * {
   .login-card1 {
     height: 460px;
   }
-  /* .hp-display {
-    animation: none;
-  } */
+
   .login-card1 h1 {
     font-size: 20px;
   }
+
   .login-card1 h3 {
     font-size: 16px;
   }
+
   .login-card1 label {
     font-size: 14px;
   }
+
   .login-card1 input {
     padding: 0.5rem;
   }
-  /* .login-card1 {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    height: 540px;
-    padding: 40px;
-    margin: 0;
-  } */
 }
