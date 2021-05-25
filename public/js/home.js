@@ -39,13 +39,13 @@ writeText()
 
 ////////////////////////////NAVIGATORS////////////////////////////
 
-const homeNavigator = () => {
-    fetch('/api/users/home').then(
+const homeNavigator = async () => {
+    await fetch('/api/users/home').then(
         document.location.replace('/api/users/home')
     );
 };
-const dashboardNavigator = () => {
-    fetch('/api/users/dashboard').then(
+const dashboardNavigator = async () => {
+    await fetch('/api/users/dashboard').then(
         document.location.replace('/api/users/dashboard')
     );
 };
