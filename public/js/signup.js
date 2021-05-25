@@ -21,3 +21,14 @@ const signupHandler = async (event) => {
 
 
 document.querySelector(".signup-form").addEventListener("submit", signupHandler);
+
+
+const password = document.getElementById('password-signup')
+const background = document.querySelector('.background')
+
+password.addEventListener('input', (e) => {
+  const input = e.target.value
+  const length = input.length
+  const blurValue = 15 - length * 2
+  background.style.filter = `blur(${blurValue}px)`
+})

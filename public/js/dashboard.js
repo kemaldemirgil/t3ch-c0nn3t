@@ -12,3 +12,4 @@ const dashboardNavigator = () => {
   
 document.querySelector('#dashboard').addEventListener('click', dashboardNavigator);
 document.querySelector('#home').addEventListener('click', homeNavigator);
+$("header").parent("body").css("background", "#303030");

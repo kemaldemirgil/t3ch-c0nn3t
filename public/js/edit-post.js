@@ -24,6 +24,7 @@ async function editFormHandler(event) {
       )} else {
         alert(response.statusText);
       }
-  }
+}
   
-  document.querySelector('.edit-post').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-post').addEventListener('submit', editFormHandler);
+$("header").parent("body").css("background", "#303030");

@@ -17,6 +17,9 @@ router.get('/', async (req, res) => {
 
 // Login route
 router.get('/login', (req, res) => {
+  req.session.save(() => {
+    req.session.loggedIn = true;
+  })
   res.render('login');
 });
 

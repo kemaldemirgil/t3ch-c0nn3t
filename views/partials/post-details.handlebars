@@ -2,11 +2,11 @@
     <section class="card">
         <div class="card-head">
             <a href="/api/users/post/{{id}}" class="title">{{title}}</a>
-            <span class="author">{{user.username}} on {{format_date created_at}}</span>
+            <span class="author"><span>{{user.username}}</span> on {{format_date created_at}}</span>
         </div>
         <div class="card-body">
             <p class="content">{{content}}</p>
         </div>
-        {{format_date created_at}} | <a href="/api/users/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+        <a class="comment-amount" href="/api/users/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> <span class="post-date">posted on : {{format_date created_at}}</span>
     </section>
 </div>

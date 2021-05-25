@@ -1,8 +1,6 @@
     <header>
         <h1>Tech-Connect</h1>
         <ul>
-            {{!-- <li><a href="/home">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li> --}}
             <li><button id="home" class="btn-no-style">Home</button></li>
             <li><button id="dashboard" class="btn-no-style">Dashboard</button></li>
             <li><button id="logout" class="btn-no-style">Logout</button></li>
@@ -12,15 +10,17 @@
     <div class="post-container">
         {{> post-details post}} 
     </div>
+    <div class="previous-comments">
+        {{> comments post.comments}}
+    </div>
     <form class="comment-form">
-        <div>
-            <textarea class="" id="comment-body"></textarea>
-        </div>
-        <div>
-            <button class="" type="submit">add comment</button>
+        <h3>Add a comment</h3>
+        <div class="form-group">
+          <input class="form-input" type="text" id="comment-body" placeholder="Say something!" />
+          <button class="btn btn-dark" type="submit">Add Comment</button>
         </div>
     </form>
-    {{> comments post.comments}}
+
     <script src="/js/logout.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/comment.js"></script>

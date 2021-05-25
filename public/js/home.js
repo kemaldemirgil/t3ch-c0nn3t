@@ -14,6 +14,36 @@ window.onclick = function(event) {
     modal.style.display = "none";
     }
 }
+/////////////
+let currentDay = $("#currentDay");
+
+updateCurrentTime();
+setInterval(updateCurrentTime, 1000);
+
+function updateCurrentTime() {
+    currentDay.text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+}
+
+////////////////
+
+const textEl = document.getElementById('text')
+const text = "What's on your mind???"
+let idx = 1
+let speed = 200
+
+writeText()
+
+function writeText() {
+    textEl.innerText = text.slice(0, idx)
+    idx++
+    if(idx > text.length) {
+        idx = 1
+    }
+    setTimeout(writeText, speed)
+}
+
+
+/////////////
 
 
 const homeNavigator = () => {
