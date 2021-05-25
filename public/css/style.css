@@ -86,6 +86,13 @@ main {
   box-shadow: 2px 2px 8px #1d1d1d;
 }
 
+.edit-button:hover {
+  background-color: #303030;
+  color: #f6f5f5;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.5s;
+  border: 1px solid rgb(133, 133, 133);
+}
 
 
 .hp-logo {
@@ -117,40 +124,6 @@ main {
   text-shadow: 1px 1px 4px #3f3f3f;
   line-height: 50px;
 }
-
-/* nav {
-  display: flex;
-  background-color: var(--font-white);
-}
-
-nav a {
-  color: var(--light);
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-nav a:hover {
-  color: var(--font-white);
-  background-color: var(--dark);
-} */
-
-/* .enter {
-  margin-top: 6px;
-}
-
-.enter a {
-  color:#182c23;
-  padding: 20px;
-  text-decoration: none;
-  text-align: left;
-  font-weight: bold;
-}
-
-.enter a:hover {
-  color: var(--font-white);
-  text-decoration: underline;
-} */
 
 .login-card1 {
   padding: 20px;
@@ -231,6 +204,10 @@ nav a:hover {
   color: #802121;
 }
 
+.user {
+  float: right;
+}
+
 header {
   padding: 15px 20px 10px 20px;
   background-color: #303030;
@@ -267,7 +244,7 @@ header ul li button:hover {
   flex: 0 1 300px;
   border: 1px solid #1a1a1a;
   border-radius: 5px;
-  background-color: #414141;
+  background-color: #545454;
   padding: 2%;
   box-shadow: 2px 2px 8px #292929;
 }
@@ -310,8 +287,17 @@ header ul li button:hover {
   line-height: 1.5;
 }
 
+.comments section {
+  background-color: #616161;
+  margin-bottom: 10px;
+}
+
 .comment-amount {
   color: #1a1a1a;
+}
+
+.comment-amount:hover {
+  color: #808080;
 }
 
 .comment-form {
@@ -329,6 +315,7 @@ header ul li button:hover {
 
 #comment-body {
   width: 50%;
+  background-color: #c2c2c2;
 }
 
 .comment-form h3 {
@@ -338,6 +325,8 @@ header ul li button:hover {
   font-family: var(--general);
 }
 .comment .text {
+  padding-bottom: 10px;
+  padding-left: 10px;
   font-size: 20px;
   color: #000;
 }
@@ -364,6 +353,9 @@ header ul li button:hover {
   padding: 1% 2%;
   margin: 1% 2%;
   border: 1px solid #1f1f1f;
+}
+.previous-comments h4, .comment-form h3 {
+  font-family: var(--title);
 }
 
 .post-date{

@@ -1,8 +1,6 @@
     <header>
         <h1>Tech-Connect</h1>
         <ul>
-            {{!-- <li><a href="/home">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li> --}}
             <li><button id="home" class="btn-no-style">Home</button></li>
             <li><button id="dashboard" class="btn-no-style">Dashboard</button></li>
             <li><button id="logout" class="btn-no-style">Logout</button></li>
@@ -10,7 +8,7 @@
     </header>
     
     <div class="home-title">
-        <h3>My Posts</h3>
+        <h3>Dashboard</h3>
     </div>
     <div class="post-container">
         {{#if posts.length}}
@@ -19,7 +17,7 @@
                 <a class="edit-a"href="/api/users/edit/{{post.id}}"><button class="edit-button">Edit</button></a>
             {{/each}}
         {{else}}
-        <h6 class="">you do not currently have any posts</h6>
+        <h6>You do not currently have any posts...</h6>
         {{/if}}
     </div>
     <script src="/js/logout.js"></script>

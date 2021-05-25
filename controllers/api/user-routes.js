@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 router.get('/home', (req, res) => {
-  // console.log(req.session);
+  console.log(req.session);
   Post.findAll({
     attributes: [
       'id',
@@ -207,18 +207,6 @@ router.get('/create/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // GET /api/users
 router.get('/', (req, res) => {

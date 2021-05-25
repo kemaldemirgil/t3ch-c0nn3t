@@ -1,18 +1,14 @@
     <header>
         <h1>Tech-Connect</h1>
         <ul>
-            {{!-- <li><a href="api/users/home">Home</a></li>
-            <li><a href="api/users/dashboard">Dashboard</a></li> --}}
             <li><button id="home" class="btn-no-style">Home</button></li>
             <li><button id="dashboard" class="btn-no-style">Dashboard</button></li>
             <li><button id="logout" class="btn-no-style">Logout</button></li>
         </ul>
     </header>
-    
     <div class="home-title">
         <h3>Home<span id="currentDay" class="leadTime"></span></h3>
-        
-        <h4 id="text"></h4>
+        <span id="text"></span><span class="user">{{user.username}}</span>
     </div>
     <div class="post-container">
         {{#each posts as |post|}}
@@ -24,7 +20,6 @@
     </div>
     <!-- modal -->
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -32,25 +27,22 @@
             <form class="form create-post">
               <div class="form-group">
                 <label for="title" class="text-dark">Title</label>
-                <input class="form-input" type="text" id="post-title" />
+                <input class="form-input" type="text" id="post-title" autocomplete="off"/>
               </div>
               <div class="form-group">
                 <label for="post-content" class="text-dark">Content</label>
                 <textarea id="post-content" class="form-input content-input" rows="3" cols="25" placeholder="Write about something!"></textarea>
-                <!-- <input class="form-input content-input" type="text" id="content" /> -->
               </div>
               <div class="form-group">
                 <button class="btn btn-dark btn-block" type="submit">Post</button>
               </div>
             </form>
         </div>
-      
     </div>
     <footer>
       <p>Share your thoughts, projects or ask something...</p>
       <small>created with ☮️ and ❤️</small>
     </footer>
-
         <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="/js/home.js"></script>
