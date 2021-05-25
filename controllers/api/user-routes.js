@@ -3,8 +3,11 @@ const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
+////////////////////////////////////////GET/////////////////////////////////////////////
+
 router.get('/home', (req, res) => {
   console.log(req.session);
+  // console.log(req.session.username);
   Post.findAll({
     attributes: [
       'id',
@@ -37,6 +40,8 @@ router.get('/home', (req, res) => {
     res.status(500).json(err);
   });
 });
+
+/////////////////////////////
 
 router.get('/dashboard', withAuth, (req, res) => {
   Post.findAll({
@@ -74,10 +79,7 @@ router.get('/dashboard', withAuth, (req, res) => {
     });
 });
 
-
-
-
-
+/////////////////////////////
 
 router.get('/post/:id', (req, res) => {
   Post.findOne({
@@ -112,9 +114,9 @@ router.get('/post/:id', (req, res) => {
       }
       const post = dbPostData.get({ plain: true });
       res.render('single-post', {
-          post,
-          loggedIn: req.session.loggedIn
-        });
+        post,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch(err => {
       console.log(err);
@@ -122,6 +124,7 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+/////////////////////////////
 
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
@@ -149,31 +152,28 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
-        return;
-      }
-
-      // serialize the data
-      const post = dbPostData.get({ plain: true });
-
-      res.render('edit-post', {
-          post,
-          loggedIn: true
-          });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(dbPostData => {
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    const post = dbPostData.get({ plain: true });
+    res.render('edit-post', {
+      post,
+      loggedIn: true
+      });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
+/////////////////////////////
 
 router.get('/create/', withAuth, (req, res) => {
   Post.findAll({
     where: {
-      // use the ID from the session
       user_id: req.session.user_id
     },
     attributes: [
@@ -198,7 +198,6 @@ router.get('/create/', withAuth, (req, res) => {
     ]
   })
     .then(dbPostData => {
-      // serialize data before passing to template
       const posts = dbPostData.map(post => post.get({ plain: true }));
       res.render('create-post', { posts, loggedIn: true });
     })
@@ -208,7 +207,8 @@ router.get('/create/', withAuth, (req, res) => {
     });
 });
 
-// GET /api/users
+/////////////////////////////
+
 router.get('/', (req, res) => {
   User.findAll({
       attributes: { exclude: ['password'] }
@@ -220,28 +220,28 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/users/1
+/////////////////////////////
+
 router.get('/:id', (req, res) => {
   User.findOne({
-      attributes: { exclude: ['password']},
-      where: {
-        id: req.params.id
+    attributes: { exclude: ['password']},
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: Post,
+        attributes: ['id', 'title', 'content', 'created_at']
       },
-      include: [
-          {
-            model: Post,
-            attributes: ['id', 'title', 'content', 'created_at']
-          },
-          {
-              model: Comment,
-              attributes: ['id', 'comment_text', 'created_at'],
-              include: {
-                model: Post,
-                attributes: ['title']
-              }
-          }
-        ]
-
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title']
+        }
+      }
+    ]
   })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -256,63 +256,54 @@ router.get('/:id', (req, res) => {
     });
 });
 
+////////////////////////////////////////POST/////////////////////////////////////////////
 
-router.post('/', async (req, res) => {
-    try {
-      const dbUserData = await User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-      });
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-        res.status(200).json(dbUserData);
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+router.post('/', (req, res) => {
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+  }).then(dbUserData => {
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+      res.json(dbUserData);
+    });
+  });
 });
 
-// Login
-router.post('/login', async (req, res) => {
-    try {
-      const dbUserData = await User.findOne({
-        where: {
-          email: req.body.email,
-        },
-      });
-  
-      if (!dbUserData) {
-        res
-          .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
-        return;
-      }
-  
-      const validPassword = await dbUserData.checkPassword(req.body.password);
-  
-      if (!validPassword) {
-        res
-          .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
-        return;
-      }
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-        res
-          .status(200)
-          .json({ user: dbUserData, message: 'You are now logged in!' });
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+/////////////////////////////
+
+router.post('/login', (req, res) => {
+  User.findOne({
+    where: {
+      email: req.body.email,
+    },
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that email address!' });
+      return;
     }
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
+    // console.log("SESSION SAVED")
+    req.session.save((err) => {
+      if (!err) {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      }
+    });
+    console.log(req.session);
+  });
 });
+
+/////////////////////////////
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
@@ -324,7 +315,8 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// PUT /api/users/1
+////////////////////////////////////////PUT/////////////////////////////////////////////
+
 router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
       individualHooks: true,
@@ -345,7 +337,8 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-// DELETE /api/users/1
+////////////////////////////////////////DELETE/////////////////////////////////////////////
+
 router.delete('/:id', withAuth, (req, res) => {
   User.destroy({
     where: {
@@ -364,5 +357,7 @@ router.delete('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;

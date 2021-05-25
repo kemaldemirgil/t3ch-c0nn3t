@@ -1,38 +1,32 @@
+////////////////////////////MODAL////////////////////////////
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-span.onclick = function() {
-    modal.style.display = "none";
-}
+btn.onclick = function() {modal.style.display = "block";}
+span.onclick = function() {modal.style.display = "none";}
 
 window.onclick = function(event) {
     if (event.target == modal) {
     modal.style.display = "none";
     }
 }
-/////////////
-let currentDay = $("#currentDay");
 
+////////////////////////////TIME////////////////////////////
+
+let currentDay = $("#currentDay");
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
-
 function updateCurrentTime() {
     currentDay.text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 }
 
-////////////////
+////////////////////////////LIVE TEXT////////////////////////////
 
 const textEl = document.getElementById('text')
 const text = "What's on your mind???"
 let idx = 1
 let speed = 200
-
-writeText()
-
 function writeText() {
     textEl.innerText = text.slice(0, idx)
     idx++
@@ -41,17 +35,15 @@ function writeText() {
     }
     setTimeout(writeText, speed)
 }
+writeText()
 
-
-/////////////
-
+////////////////////////////NAVIGATORS////////////////////////////
 
 const homeNavigator = () => {
     fetch('/api/users/home').then(
         document.location.replace('/api/users/home')
     );
 };
-
 const dashboardNavigator = () => {
     fetch('/api/users/dashboard').then(
         document.location.replace('/api/users/dashboard')
