@@ -11,6 +11,7 @@
 ## About:
 This website is a CMS-style blog site similar to a WordPress site, where developers can publish their blog posts and comment on other developers’ posts as well. Tech Connect was mainly built to help users connect with others within the technology industry. Users can ask for help, share their work and connect with others along with many other features.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://t3ch-connect.herokuapp.com/)
 Demo
 :-------------------------:
 ![](/public/images/demo.gif)
