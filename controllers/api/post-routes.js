@@ -119,8 +119,13 @@ router.put('/:id', withAuth, (req, res) => {
 
 ////////////////////////////////////////DELETE/////////////////////////////////////////////
 
-router.delete('/:id', withAuth, (req, res) => {
-  Post.destroy({
+router.delete('/:id', withAuth, async (req, res) => {
+  await Comment.destroy({
+    where: {
+      post_id: req.params.id
+    }
+  })
+  await Post.destroy({
     where: {
       id: req.params.id
     }
