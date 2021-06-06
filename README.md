@@ -37,7 +37,7 @@ Dependencies
 ![](/public/images/dependencies.PNG)
 
 ## Improvements & Issues:
-This application mainly runs very smoothly & it is fully responsive however, it really isn't the best. One of the main issues for now is that users cannot delete their own posts if they commented on them and deleting comments is not a thing but, these could easily be fixed eventually. There could've been a lot more features added to it to actually make it usable in a daily routine. Some exciting features could be; leaving a like for posts, having your own profile, adding other users to your list and even a chat system to allow users to communicate with each other! All these are not impossible to add to it but, I will leave it as it is for now. This was a great exercise, and I'm looking forward to build an actual website that could support more...
+This application mainly runs very smoothly & it is fully responsive however, it really isn't the best. Deleting comments is not a thing but, these could easily be fixed eventually. There could've been a lot more features added to it to actually make it usable in a daily routine. Some exciting features could be; leaving a like for posts, having your own profile, adding other users to your list and even a chat system to allow users to communicate with each other! All these are not impossible to add to it but, I will leave it as it is for now. This was a great exercise, and I'm looking forward to build an actual website that could support more...
 
 
 > Please contact me for any contributions or any input about this application, I would love to get some feedback and improve this simple project.
